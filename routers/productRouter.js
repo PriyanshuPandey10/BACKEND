@@ -1,18 +1,18 @@
 const express = require('express');
 const router = express.Router();
 router.get('/add', (req,res) => {
-    res.send("Add Response from user");
+    res.send("Add product ");
 });
 router.get('/getall', (req,res) => {
-    res.send("getall Response from user");
+    res.send("getall product ");
 });
 router.get('/getbyid', (req,res) => {
-    res.send("getbyid Response from user");
+    res.send("getbyid product ");
 });
 router.get('/update', (req,res) => {
-    res.send("update Response from user");
+    res.send("update product ");
 });
 router.get('/delete', (req,res) => {
-    res.send("delete Response from user");
+    res.send("delete product ");
 });
 module.exports = router;
