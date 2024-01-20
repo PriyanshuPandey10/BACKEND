@@ -1,4 +1,5 @@
 const express = require('express');
+const Model = require('../models/productModel');
 const router = express.Router();
 router.get('/add', (req,res) => {
     res.send("Add product ");

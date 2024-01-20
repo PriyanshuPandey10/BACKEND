@@ -7,5 +7,4 @@ mongoose.connect(url)
 .catch((err) => {                                                         //asyncronous function
     console.log(err);
 });
-setTimeout(()=>{console.log('after 3 seconds')},3000);
-console.log('some other task')
+module.exports = mongoose;
