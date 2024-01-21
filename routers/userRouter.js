@@ -3,7 +3,16 @@ const Model =require('../models/userModel');
 const router = express.Router();
 router.post('/add', (req,res) => {
     console.log(req.body);
-    res.send("Add Response from user");
+    new Model(req.body).save()
+    .then((result) => {
+        console.log(result);
+        res.json(result);
+    }).catch((err) => {
+        console.log(err);
+        res.join(err);
+        
+    });
+    
 });
 router.get('/getall', (req,res) => {
     res.send("getall Response from user");
