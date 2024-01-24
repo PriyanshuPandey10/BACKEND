@@ -29,7 +29,15 @@ router.get('/getbyid', (req,res) => {
 router.get('/update', (req,res) => {
     res.send("update Response from user");
 });
-router.get('/delete', (req,res) => {
-    res.send("delete Response from user");
+router.delete("/delete:id", (req,res) => {
+   Model.findByIdAndDelete(req.params.id)
+   .then((result) => {
+    res.json(result);
+    
+   }).catch((err) => {
+    console.log(err);
+    res.json(err);
+    
+   });
 });
 module.exports = router;
