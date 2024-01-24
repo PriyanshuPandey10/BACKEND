@@ -15,7 +15,13 @@ router.post('/add', (req,res) => {
     
 });
 router.get('/getall', (req,res) => {
-    res.send("getall Response from user");
+    Model.find()
+    .then((result) => {
+       res.json(result) 
+    }).catch((err) => {
+        console.log(err);
+        res.json(err);
+    });
 });
 router.get('/getbyid', (req,res) => {
     res.send("getbyid Response from user");
